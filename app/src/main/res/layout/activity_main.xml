@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mogsev.application.weathermap.gui.activity.MainActivity">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="weather"
+            type="com.mogsev.application.weathermap.network.model.WeatherInfo" />
+
+        <variable
+            name="model"
+            type="com.mogsev.application.weathermap.viewmodel.MainActivityViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/main_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{weather.toString()}"
+            android:visibility="@{model.error ? view.GONE : view.VISIBLE}" />
+
+        <com.mogsev.application.weathermap.gui.view.ErrorStubView
+            android:id="@+id/error_stub_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:text="@string/text_main_stub_data_empty"
+            android:visibility="@{model.error ? view.VISIBLE : view.GONE}"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</layout>

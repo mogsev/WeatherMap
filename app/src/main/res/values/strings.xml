@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WeatherMap</string>
+
+    <!-- Error stub view -->
+    <string name="warning_unknown_error">Unknown error</string>
+    <string name="warning_service_is_unavailable">Service is not available, please try again later.</string>
+
+    <string name="text_main_stub_data_empty">Information is absent</string>
+
+</resources>
